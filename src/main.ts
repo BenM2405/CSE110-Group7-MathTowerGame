@@ -6,18 +6,28 @@ const stage = new Konva.Stage({
   height: window.innerHeight
 });
 
+const text = new Konva.Text({
+  x: stage.width() / 2 -50,
+  y: stage.height() / 2,
+  fontFamily: 'Calibri',
+  fontSize: 24,
+  text: '',
+  fill: 'black',
+  });
+
 const layer = new Konva.Layer();
 stage.add(layer);
 
-const arc = new Konva.Arc({
+const circle = new Konva.Circle({
   x: stage.width() / 2,
   y: stage.height() / 2,
-  innerRadius: 40,
-  outerRadius: 70,
-  angle: 60,
-  fill: 'yellow',
+  radius: 70,
+  fill: 'red',
   stroke: 'black',
-  strokeWidth: 4
+  strokeWidth: 4,
 });
 
-layer.add(arc);
+text.text('Battle Test')
+layer.add(circle);
+layer.add(text);
+stage.add(layer);
